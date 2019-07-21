@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/jema28/w5-test/issues"
   },
-  "homepage": "https://github.com/jema28/w5-test#readme"
+  "homepage": "https://github.com/jema28/w5-test#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "request": "^2.88.0",
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
 }

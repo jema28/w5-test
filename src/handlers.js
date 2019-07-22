@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-
+const req = require('request');
+require("env2")(".env");
 const handleHomeRoute = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
   fs.readFile(filePath, (error, file) => {
@@ -40,7 +41,12 @@ const handlePublic = (request, response, url) => {
 };
 
 const handleAPI = (request, response) => {
-  // add code here!
+  req(`https://www.omdbapi.com/?s=star-wars&apikey=${process.env.API_KEY}`, (err, res, body) => {
+    if (err) {   response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end("<h1>11111111111111</h1>"); }
+    response.writeHead(200, {'Content-Type': 'text/plan'});
+    response.end(body);
+  });
 }
 
 module.exports = {
